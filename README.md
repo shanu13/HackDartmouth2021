@@ -1,4 +1,4 @@
-#Our Project for HackDartMouth 2021
+# Our Project for HackDartMouth 2021
 This is the project which we submitted for HackDartMouth 2021, for the beginners track.
 
 # Running the project
