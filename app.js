@@ -55,8 +55,10 @@ app.use(passport.session())
 
 
 // ----Startng the database----
-
-mongoose.connect("mongodb://localhost:27017/web4you", {useNewUrlParser: true});
+const uri = 'mongodb+srv://shantanu:shantanu@cluster0.hktq0.mongodb.net/HackDartmouth?retryWrites=true&w=majority'
+mongoose.connect(uri, {useNewUrlParser: true},()=> {
+    console.log('mongodb connected')
+});
 
 
 app.use('/images',express.static("images"));
