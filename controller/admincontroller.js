@@ -18,11 +18,15 @@ const deleteFile = (filepath) => {
 exports.getHome = (req,res,next) => {
     Post.find({}, function(err, posts){
         console.log(posts);
+        const id = req.user._id
+        console.log(id);
         res.render("home", {
           posts: posts,
-          user : req.user
+          user : req.user,
+          id : id
           });
       });
+    
 
       console.log('user',req.user)
 }
@@ -92,7 +96,8 @@ exports.postCompose = (req,res,next) => {
         techStack : tech,
         link : { github,linkedin },
         timezone :  timezone,
-        education : {university, year}
+        education : {university, year},
+        user : req.user
       });
       console.log('post created')
       Post.findOne({title: title},function(err,obj){

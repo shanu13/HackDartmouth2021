@@ -36,8 +36,9 @@
                 <input type="checkbox" onChange="this.form.submit()" name="checkbox" >
               </div>
             </form> -->
-
+              <% if(post.user.toString() == id) {  %> 
             <button id="deletePost" class="btn btn-primary" data-postid ="<%= `${post._id }`%>"> Delete Post </button>
+            <% } %> 
             
             
             <!-- <div class="like_count">

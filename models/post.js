@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const user = require('./user')
 
 const Schema = mongoose.Schema;
 
@@ -52,6 +53,10 @@ const postSchema = new Schema ({
             type : String,
             required : true
         }
+    },
+    user: {
+      type : Schema.ObjectId,
+      ref : user
     }
     
 })
