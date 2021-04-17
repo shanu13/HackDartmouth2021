@@ -1,42 +1,139 @@
 <%- include("partials/header") -%>
 
-<h1>Compose</h1>
-<form class="" action="/compose" method="post" enctype="multipart/form-data">
+<form class="" action="/compose" method="post" enctype="multipart/form-data" style="background-image: url(/images/hack.png);">
     <div class="form-group">
-        <label>Title</label>
+        <h1 class="label">Create Campaign</h1>
+        <label class="label">Title</label>
         <input class="form-control" type="text" name="title">
 
-        <label >Add Image</label>
+        <label class="label">Add Image</label>
         <input class="form-control" type="file" name="postimg">
 
-        <label>Post</label>
+        <label class="label">Description</label>
         <textarea class="form-control" name="body" rows="5" cols="30"></textarea>
 
-        <label>Name</label>
-        <input class="form-control" type="text" name ="name">
+        <label class="label">Name</label>
+        <% if(user){ %> 
+            <input class="form-control" type="text" name ="name" value="<%= user.userName %>" disabled>
+          <% } else{ %>
+            <input class="form-control" type="text" name ="name" value="">
+        <% } %>
 
-        <label>Email</label>
-        <input class="form-control" type="text" name="email">
+        <label class="label">Email</label>
+        <% if(user){ %> 
+            <input class="form-control" type="text" name ="email" value="<%= user.Email %>" disabled>
+          <% } else{ %>
+            <input class="form-control" type="text" name ="email" value="">
+        <% } %>
 
-        <label>Tech Stack</label>
+        <label class="label">Tech Stack</label>
         <input class="form-control" type="text" name="tech">
 
-        <label>TimeZone</label>
-        <input class="form-control" type="text" name="timezone">
+        <label class="label">Time Zone</label>
+        <select class="form-control" name="timezone">
+            <option value="(GMT-12:00) International Date Line West" selected>(GMT-12:00) International Date Line West</option>
+            <option value="(GMT-11:00) Midway Island, Samoa">(GMT-11:00) Midway Island, Samoa</option>
+            <option value="(GMT-10:00) Hawaii">(GMT-10:00) Hawaii</option>
+            <option value="(GMT-09:00) Alaska">(GMT-09:00) Alaska</option>
+            <option value="(GMT-08:00) Pacific Time (US & Canada)">(GMT-08:00) Pacific Time (US & Canada)</option>
+            <option value="(GMT-08:00) Tijuana, Baja California">(GMT-08:00) Tijuana, Baja California</option>
+            <option value="(GMT-07:00) Arizona">(GMT-07:00) Arizona</option>
+            <option value="(GMT-07:00) Chihuahua, La Paz, Mazatlan">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+            <option value="(GMT-07:00) Mountain Time (US & Canada)">(GMT-07:00) Mountain Time (US & Canada)</option>
+            <option value="(GMT-06:00) Central America">(GMT-06:00) Central America</option>
+            <option value="(GMT-06:00) Central Time (US & Canada)">(GMT-06:00) Central Time (US & Canada)</option>
+            <option value="(GMT-06:00) Guadalajara, Mexico City, Monterrey">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+            <option value="(GMT-06:00) Saskatchewan">(GMT-06:00) Saskatchewan</option>
+            <option value="(GMT-05:00) Bogota, Lima, Quito, Rio Branco">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+            <option value="(GMT-05:00) Eastern Time (US & Canada)">(GMT-05:00) Eastern Time (US & Canada)</option>
+            <option value="(GMT-05:00) Indiana (East)">(GMT-05:00) Indiana (East)</option>
+            <option value="(GMT-04:00) Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
+            <option value="(GMT-04:00) Caracas, La Paz">(GMT-04:00) Caracas, La Paz</option>
+            <option value="(GMT-04:00) Manaus">(GMT-04:00) Manaus</option>
+            <option value="(GMT-04:00) Santiago">(GMT-04:00) Santiago</option>
+            <option value="(GMT-03:30) Newfoundland">(GMT-03:30) Newfoundland</option>
+            <option value="(GMT-03:00) Brasilia">(GMT-03:00) Brasilia</option>
+            <option value="(GMT-03:00) Buenos Aires, Georgetown">(GMT-03:00) Buenos Aires, Georgetown</option>
+            <option value="(GMT-03:00) Greenland">(GMT-03:00) Greenland</option>
+            <option value="(GMT-03:00) Montevideo">(GMT-03:00) Montevideo</option>
+            <option value="(GMT-02:00) Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
+            <option value="(GMT-01:00) Cape Verde Is.">(GMT-01:00) Cape Verde Is.</option>
+            <option value="(GMT-01:00) Azores">(GMT-01:00) Azores</option>
+            <option value="(GMT+00:00) Casablanca, Monrovia, Reykjavik">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+            <option value="(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+            <option value="(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+            <option value="(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+            <option value="(GMT+01:00) Brussels, Copenhagen, Madrid, Paris">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+            <option value="(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+            <option value="(GMT+01:00) West Central Africa">(GMT+01:00) West Central Africa</option>
+            <option value="(GMT+02:00) Amman">(GMT+02:00) Amman</option>
+            <option value="(GMT+02:00) Athens, Bucharest, Istanbul">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+            <option value="(GMT+02:00) Beirut">(GMT+02:00) Beirut</option>
+            <option value="(GMT+02:00) Cairo">(GMT+02:00) Cairo</option>
+            <option value="(GMT+02:00) Harare, Pretoria">(GMT+02:00) Harare, Pretoria</option>
+            <option value="(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+            <option value="(GMT+02:00) Jerusalem">(GMT+02:00) Jerusalem</option>
+            <option value="(GMT+02:00) Minsk">(GMT+02:00) Minsk</option>
+            <option value="(GMT+02:00) Windhoek">(GMT+02:00) Windhoek</option>
+            <option value="(GMT+03:00) Kuwait, Riyadh, Baghdad">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+            <option value="(GMT+03:00) Moscow, St. Petersburg, Volgograd">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+            <option value="(GMT+03:00) Nairobi">(GMT+03:00) Nairobi</option>
+            <option value="(GMT+03:00) Tbilisi">(GMT+03:00) Tbilisi</option>
+            <option value="(GMT+03:30) Tehran">(GMT+03:30) Tehran</option>
+            <option value="(GMT+04:00) Abu Dhabi, Muscat">(GMT+04:00) Abu Dhabi, Muscat</option>
+            <option value="(GMT+04:00) Baku">(GMT+04:00) Baku</option>
+            <option value="(GMT+04:00) Yerevan">(GMT+04:00) Yerevan</option>
+            <option value="(GMT+04:30) Kabul">(GMT+04:30) Kabul</option>
+            <option value="(GMT+05:00) Yekaterinburg">(GMT+05:00) Yekaterinburg</option>
+            <option value="(GMT+05:00) Islamabad, Karachi, Tashkent">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+            <option value="(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+            <option value="(GMT+05:30) Sri Jayawardenapura">(GMT+05:30) Sri Jayawardenapura</option>
+            <option value="(GMT+05:45) Kathmandu">(GMT+05:45) Kathmandu</option>
+            <option value="(GMT+06:00) Almaty, Novosibirsk">(GMT+06:00) Almaty, Novosibirsk</option>
+            <option value="(GMT+06:00) Astana, Dhaka">(GMT+06:00) Astana, Dhaka</option>
+            <option value="(GMT+06:30) Yangon (Rangoon)">(GMT+06:30) Yangon (Rangoon)</option>
+            <option value="(GMT+07:00) Bangkok, Hanoi, Jakarta">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+            <option value="(GMT+07:00) Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+            <option value="(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+            <option value="(GMT+08:00) Kuala Lumpur, Singapore">(GMT+08:00) Kuala Lumpur, Singapore</option>
+            <option value="(GMT+08:00) Irkutsk, Ulaan Bataar">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+            <option value="(GMT+08:00) Perth">(GMT+08:00) Perth</option>
+            <option value="(GMT+08:00) Taipei">(GMT+08:00) Taipei</option>
+            <option value="(GMT+09:00) Osaka, Sapporo, Tokyo">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+            <option value="(GMT+09:00) Seou">(GMT+09:00) Seoul</option>
+            <option value="(GMT+09:00) Yakutsk">(GMT+09:00) Yakutsk</option>
+            <option value="(GMT+09:30) Adelaide">(GMT+09:30) Adelaide</option>
+            <option value="(GMT+09:30) Darwin">(GMT+09:30) Darwin</option>
+            <option value="(GMT+10:00) Brisbane">(GMT+10:00) Brisbane</option>
+            <option value="(GMT+10:00) Canberra, Melbourne, Sydney">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+            <option value="(GMT+10:00) Hobart">(GMT+10:00) Hobart</option>
+            <option value="(GMT+10:00) Guam, Port Moresby">(GMT+10:00) Guam, Port Moresby</option>
+            <option value="(GMT+10:00) Vladivostok">(GMT+10:00) Vladivostok</option>
+            <option value="(GMT+11:00) Magadan, Solomon Is., New Caledonia)">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+            <option value="(GMT+12:00) Auckland, Wellington">(GMT+12:00) Auckland, Wellington</option>
+            <option value="(GMT+12:00) Fiji, Kamchatka, Marshall Is.">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+            <option value="(GMT+13:00) Nuku'alofa">(GMT+13:00) Nuku'alofa</option>
+         </select>
 
-        <label>University </label>
+        <label class="label">University </label>
         <input class="form-control" type="text" name="university">
 
-        <label>College Year</label>
-        <input class="form-control" type="number" name="year">
+        <label class="label">College Year</label>
+        <select class="form-control" name="year">
+            <option value="Freshman" selected>Freshman</option>
+            <option value="Sophomore">Sophomore</option>
+            <option value="Junior">Junior</option>
+            <option value="Senior">Senior</option>
+            <option value="Other">Other</option>
+        </select>
 
-        <label>Github url</label>
+        <label class="label">Github URL</label>
         <input class="form-control" type="text" name="github">
 
-        <label>Linkedin url</label>
+        <label class="label">Linkedin URL</label>
         <input class="form-control" type="text" name="linkedin">
     </div>
-    <button class="btn btn-primary" type="submit" name="button">Publish</button>
+    <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;">Save</button>
 </form>
 
 <%- include("partials/footer") -%>

@@ -14,6 +14,9 @@ h1{
   }
   .card{
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    width: 80%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
   }
   .projects{
     margin-left:0px !important;
@@ -28,3 +31,50 @@ h1{
     border:none;
     background-color:white;
   }
+
+  .no-padding {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .headerr {
+    background-color: #7D5DC1
+    ;
+  }
+
+  .found-team {
+    margin-bottom: 1%;
+    margin-top: 2%;
+    background-color: #F73859;
+    border: 0;
+  }
+
+  .found-team:hover {
+    background-color: #be2c45;
+  }
+
+  .header-item {
+    margin-left: 7%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .label {
+    color: #7D5DC1;
+    font-weight: bold;
+  }
+
+  .post-button {
+    background-color: #7D5DC1;
+    color: white;
+    width: 30%;
+  }
+
+  .post-button:hover {
+    color: white;
+    background-color: #4e3979;
+}
+
+.img-thumbnail {
+  height: 200px;
+}
