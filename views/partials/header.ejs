@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Web For You</title>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- <a class="navbar-brand" href="#">Web For You</a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> --> 
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+             <% if(user) { %> 
+            <a class="nav-link" href="/compose">Compose</a>
+            <% } %> 
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li> -->
+          <li class="nav-item">
+            <% if(user) {  %> 
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } else { %> 
+            <a class="nav-link" href="/login">Log in</a>
+            <% } %> 
+          </li>
+
+          <% if(user) { %> 
+            <li>
+              <p>Hello <%= user.userName %> </p>
+            </li>
+           <% } %>  
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</head>
+  <body>
+    <div class="container-fluid">
+      

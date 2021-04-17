@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+  }
+  .visit{
+    text-align:center;
+    width:350px;
+    border:none;
+    background-color:white;
+    transition:0.3s;
+    height:50px;
+  }
+  .visit:hover{
+    background-color:aqua;
+  }
+  .card{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+  .projects{
+    margin-left:0px !important;
+    padding-left:0px !important;
+  }
+  .fa-heart{
+    color: black;
+  }
+  .like{
+    width:auto;
+    height:auto;
+    border:none;
+    background-color:white;
+  }
