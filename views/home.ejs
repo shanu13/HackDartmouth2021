@@ -26,11 +26,11 @@
             <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='mailto:<%= post.email %>'">
               <a href="mailto:<%= post.email %>" class="label" style="text-decoration: none; color: white;">Email</a>
             </button>
-            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='https://<%= post.link.github %>'">
-              <a href="https://<%= post.link.github %>" target="_blank" class="label" style="text-decoration: none; color: white;">Github</a>
+            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='<%= post.link.github %>'">
+              <a href="<%=post.link.github %>" target="_blank" class="label" style="text-decoration: none; color: white;">Github</a>
             </button>
-            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='https://<%= post.link.linkedin %>'">
-              <a href="https://<%= post.link.linkedin %>" target="_blank" class="label" style="text-decoration: none; color: white;">LinkedIn</a>
+            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='<%= post.link.linkedin %>'">
+              <a href="<%= post.link.linkedin %>" target="_blank" class="label" style="text-decoration: none; color: white;">LinkedIn</a>
             </button>
             <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;" onclick="location.href='/message/<%=post.user.toString() %>'">
               <a id="message" style="text-decoration: none; color: white;" class="label" href="/message/<%=post.user.toString() %>" data-user = "<%= post.user%>"> Message  </a>
