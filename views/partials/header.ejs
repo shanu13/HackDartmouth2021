@@ -19,23 +19,23 @@
         <span class="navbar-toggler-icon"></span>
       </button> --> 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav" style="color: white;">
+        <ul class="navbar-nav" style="color: white; width: 100%">
           <li>
             <a href="/home">
-              <img src="../../images/match.svg" style="height: 120px; margin: 5%; ">
+              <img src="../../images/match.svg" style="height: 120px;">
             </a>
           </li>
-          <li class="nav-item header-item" style="align-self:flex-end">
+          <li class="nav-item header-item" style="align-self:flex-end; margin-left: 27%;">
             <p>
              <% if(user) { %> 
-            <a href="/compose" style="color: white; text-decoration: none;">Create</a>
+            <a href="/compose" style="color: white; text-decoration: none;">Create campaign</a>
             <% } %> 
             </p>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="/signup">Sign Up</a>
           </li> -->
-          <li class="nav-item header-item" style="align-self:flex-end">
+          <li class="nav-item header-item" style="align-self:flex-end; margin-left: 7%;">
             <p>
             <% if(user) {  %> 
             <a href="/logout" style="color: white; text-decoration: none;">Logout</a>
