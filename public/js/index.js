@@ -1,9 +1,4 @@
 
-
-
-
-
-
 const deletePost = document.querySelectorAll('#deletePost')
 
 deletePost.forEach(post => post.addEventListener('click',(e)=> {
@@ -28,3 +23,14 @@ deletePost.forEach(post => post.addEventListener('click',(e)=> {
 
 
 }))
+
+// socket.io 
+
+const socket = io('/');
+
+
+const messagePosts = document.querySelectorAll('#message')
+console.log(messagePosts)
+
+
+

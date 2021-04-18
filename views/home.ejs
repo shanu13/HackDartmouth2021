@@ -1,6 +1,6 @@
 <%- include("partials/header") -%>
 
-<% posts.forEach(function(post){ %>
+<% for(let post of posts){ %>
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
@@ -24,6 +24,8 @@
             <a href="mailto:<%= post.email %>"> Send Mail</a>
            <a href="https://<%= post.link.github %>" target="_blank">Github</a>
            <a href="https://<%= post.link.linkedin %>" target="_blank">Linkedin</a>
+           <a id="message" href="/message/<%=post.user.toString() %>" data-user = "<%= post.user%>"> Message
+          </a>
             
             <!-- <button class="visit">View Blog</button> -->
           </div>
@@ -78,7 +80,7 @@
 } 
 </script>
 
-<% }) ;%>
+<% } %>
 
 
 
