@@ -1,4 +1,5 @@
 
+
 const deletePost = document.querySelectorAll('#deletePost')
 
 deletePost.forEach(post => post.addEventListener('click',(e)=> {

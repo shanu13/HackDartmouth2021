@@ -83,13 +83,6 @@ app.get('/', (req, res) => {
 
 })
 
-// const formatMessage = require('./utils/messages');
-// const {
-//   userJoin,
-//   getCurrentUser,
-//   userLeave,
-//   getRoomUsers
-// } = require('./utils/users')
 
 
 io.on('connection', socket => {
@@ -111,6 +104,7 @@ io.on('connection', socket => {
 
 const port = process.env.PORT || 3000
 
+
 server.listen(port, function() {
     console.log(`server started on port ${port}`);
-});
+})

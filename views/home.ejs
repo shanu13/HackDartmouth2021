@@ -8,24 +8,41 @@
   var c = 0;//we will insert the value of c(count) in our database and call it here
 </script>
 
-<div>
+<div style="background-image: url(/images/hack.png);"">
     <div class="container-fluid card">
-        <h1><%= post.title %></h1>
-          <p><%= post.name %>
+        <h1 style="margin-top: 1%;" class="label"><%= post.title %></h1>
+          <span><span class="label">Posted by </span><%= post.name %></span>
+            <% if(post.user.toString() == id) {  %> 
+              <p style="color: #3F3D56; font-weight: bold;">•• your campaign ••</p>
+             <% } %> 
         <div class="row">
           <div class="col">
-            <img src="<%= `${post.imageUrl}`  %>" class=" img-thumbnail " alt="Blog Image" >  
+            <img src="<%= `${post.imageUrl}`  %>" class="img-thumbnail" style="border-radius: 50px;" alt="Blog Image" > 
+            <div></div>
+            <% if(post.user.toString() == id) {  %> 
+              <button id="deletePost" class="btn btn-danger found-team" data-postid ="<%= `${post._id }`%>"> Already found my team! </button>
+              <% } %>  
+              <div></div>
+            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;">
+              <a href="mailto:<%= post.email %>" class="label" style="text-decoration: none; color: white;">Email</a>
+            </button>
+            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;">
+              <a href="https://<%= post.link.github %>" target="_blank" class="label" style="text-decoration: none; color: white;">Github</a>
+            </button>
+            <button class="btn post-button" type="submit" name="button" style="margin-top: 1%; margin-bottom: 1%; padding-top: 15px; padding-bottom: 15px;">
+              <a href="https://<%= post.link.linkedin %>" target="_blank" class="label" style="text-decoration: none; color: white;">LinkedIn</a>
+            </button>
           </div>
           <div class="col">
+            <p class="label"><strong>Description</strong></p>
             <p><%= post.content%></p>
+            <p class="label"><strong>Technologies</strong></p>
             <p> <%= post.techStack%>  </p>
+            <p class="label"><strong>Timezone</strong></p>
             <p><%= post.timezone %></p>
+            <p class="label"><strong>University</strong></p>
             <p><%= post.education.university %> , <%= post.education.year %>  </p>
-            <a href="mailto:<%= post.email %>"> Send Mail</a>
-           <a href="https://<%= post.link.github %>" target="_blank">Github</a>
-           <a href="https://<%= post.link.linkedin %>" target="_blank">Linkedin</a>
-           <a id="message" href="/message/<%=post.user.toString() %>" data-user = "<%= post.user%>"> Message
-          </a>
+           <a id="message" href="/message/<%=post.user.toString() %>" data-user = "<%= post.user%>"> Message  </a>
             
             <!-- <button class="visit">View Blog</button> -->
           </div>
@@ -38,9 +55,6 @@
                 <input type="checkbox" onChange="this.form.submit()" name="checkbox" >
               </div>
             </form> -->
-              <% if(post.user.toString() == id) {  %> 
-            <button id="deletePost" class="btn btn-primary" data-postid ="<%= `${post._id }`%>"> Delete Post </button>
-            <% } %> 
             
             
             <!-- <div class="like_count">
