@@ -14,14 +14,14 @@
 
         <label class="label">Name</label>
         <% if(user){ %> 
-            <input class="form-control" type="text" name ="name" value="<%= user.userName %>" disabled>
+            <input class="form-control" type="text" name ="name" value="<%= user.userName %>" readonly>
           <% } else{ %>
             <input class="form-control" type="text" name ="name" value="">
         <% } %>
 
         <label class="label">Email</label>
         <% if(user){ %> 
-            <input class="form-control" type="text" name ="email" value="<%= user.Email %>" disabled>
+            <input class="form-control" type="text" name ="email" value="<%= user.Email %>" readonly>
           <% } else{ %>
             <input class="form-control" type="text" name ="email" value="">
         <% } %>
